@@ -26,12 +26,12 @@ jobs:
       - name: Deploy to EC2
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
-          cd /home/ec2-user
+          cd /home/ec2-user/awsApp
       
-          # Если репозитория нет — клонируем
-          if [ ! -d .git ]; then
-            git clone https://github.com/igoruskortsev/awsApp.git .
-          fi
+#          # Если репозитория нет — клонируем
+#          if [ ! -d .git ]; then
+#            git clone https://github.com/igoruskortsev/awsApp.git .
+#          fi
       
           git fetch origin
           git reset --hard origin/main
