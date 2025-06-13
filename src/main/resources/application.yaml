@@ -6,3 +6,8 @@ server:
 spring:
   application:
     name: awsApp
+
+logging:
+  file:
+    path: /var/log/myapp
+    name: /var/log/myapp/app.log
