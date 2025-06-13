@@ -36,10 +36,6 @@ jobs:
       - name: Restart Tomcat
         run: |
           ssh -o StrictHostKeyChecking=no -i ${{ secrets.EC2_SSH_KEY }} \
-              ec2-user@${{ secrets.EC2_HOST }} << 'EOF'
-#          sudo systemctl stop tomcat
-#          sudo rm -rf /var/lib/tomcat/webapps/ROOT*
-#          sudo cp /home/ec2-user/app.war /var/lib/tomcat/webapps/ROOT.war
-#          sudo chown tomcat:tomcat /var/lib/tomcat/webapps/ROOT.war
+           ec2-user@${{ secrets.EC2_HOST }} << 'EOF'
           sudo systemctl restart myapp.service
           EOF
